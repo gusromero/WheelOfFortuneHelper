@@ -9,12 +9,16 @@ namespace WheelOfFortuneTest
 {
 
     [TestFixture]
-    public class WheelOfFortuneTest
+    public class WordsFinderTest
     {
         [Test]
-        public void AddTwoPlusTwo()
+        public void ReturnEmptyStringListWhenNoWordIsFound()
         {
-            Assert.AreEqual(4, 2 + 2);
+            var wf = new WordsFinder();
+
+            var words = wf.GetWords(""); 
+            Assert.AreEqual(0, words.Count);
         }
+
     }
 }
