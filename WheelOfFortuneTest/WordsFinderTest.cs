@@ -16,8 +16,20 @@ namespace WheelOfFortuneTest
         {
             var wf = new WordsFinder();
 
-            var words = wf.GetWords(""); 
+            var words = wf.GetWords("");
+
             Assert.AreEqual(0, words.Count);
+        }
+
+        [Test]
+        public void ReturnOneWordWhenThereIsOneWordInDictionary()
+        {
+            var wordList = new List<string>() { "word" };
+            var wf = new WordsFinder(wordList);
+
+            var words = wf.GetWords("");
+
+            Assert.AreEqual(1, words.Count);
         }
 
     }
