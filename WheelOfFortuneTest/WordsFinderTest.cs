@@ -22,7 +22,7 @@ namespace WheelOfFortuneTest
         }
 
         [Test]
-        public void ReturnOneWordWhenThereIsOneWordInDictionary()
+        public void ReturnOneWordWhenThereIsOneWordInDictionaryAndEmptyFilter()
         {
             var wordList = new List<string>() { "word" };
             var wf = new WordsFinder(wordList);
@@ -32,5 +32,15 @@ namespace WheelOfFortuneTest
             Assert.AreEqual(1, words.Count);
         }
 
+        [Test]
+        public void ReturnOneWordWhenItMatchesTheFilter()
+        {
+            var wordList = new List<string>() { "word", "hello" };
+            var wf = new WordsFinder(wordList);
+
+            var words = wf.GetWords("hello");
+
+            Assert.AreEqual(1, words.Count);
+        }
     }
 }

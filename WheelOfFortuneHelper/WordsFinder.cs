@@ -9,6 +9,7 @@ namespace WheelOfFortuneTest
 
         public WordsFinder()
         {
+            _wordList = new List<string>();
         }
 
         public WordsFinder(List<string> wordList)
@@ -16,7 +17,7 @@ namespace WheelOfFortuneTest
             this._wordList = wordList;
         }
 
-        public List<string> GetWords(string v)
+        public List<string> GetWords(string filter)
         {
             return _wordList;
         }
