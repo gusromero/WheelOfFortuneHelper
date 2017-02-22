@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WheelOfFortuneTest
+namespace WheelOfFortuneHelper
 {
     public class WordsFinder
     {
