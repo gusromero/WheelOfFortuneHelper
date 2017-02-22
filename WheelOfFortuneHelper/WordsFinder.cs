@@ -19,7 +19,9 @@ namespace WheelOfFortuneHelper
 
         public List<string> GetWords(string filter)
         {
-            return _wordList;
+            if (string.IsNullOrEmpty(filter))
+                return _wordList;
+            return _wordList.FindAll(p=> p.Equals(filter));
         }
     }
 }
