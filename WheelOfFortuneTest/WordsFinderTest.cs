@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using WheelOfFortuneHelper;
 
 namespace WheelOfFortuneTest
 {
@@ -38,9 +39,20 @@ namespace WheelOfFortuneTest
             var wordList = new List<string>() { "word", "hello" };
             var wf = new WordsFinder(wordList);
 
-            var words = wf.GetWords("hello");
+            var wordsSolutions = wf.GetWords("hello");
 
-            Assert.AreEqual(1, words.Count);
+            Assert.AreEqual(1, wordsSolutions.Count);
+        }
+
+
+        [Test]
+        public void ReadFile()
+        {
+
+            var wr = new WordsReader();
+            var wordList = wr.GetWordList();
+
+            Assert.AreEqual(267751, wordList.Count);
         }
     }
 }
