@@ -34,7 +34,7 @@ namespace WheelOfFortuneTest
         }
 
         [Test]
-        public void ReturnOneWordWhenItMatchesTheFilter()
+        public void ReturnOneWordWhenItMatchesTheWord()
         {
             var wordList = new List<string>() { "word", "hello" };
             var wf = new WordsFinder(wordList);
@@ -53,6 +53,17 @@ namespace WheelOfFortuneTest
             var wordList = wr.GetWordList();
 
             Assert.AreEqual(267751, wordList.Count);
+        }
+
+        [Test]
+        public void ReturnOneWordWhenItMatchesTheFilter()
+        {
+            var wordList = new List<string>() { "word", "hello" };
+            var wf = new WordsFinder(wordList);
+
+            var wordsSolutions = wf.GetWords("hello");
+
+            Assert.AreEqual(1, wordsSolutions.Count);
         }
     }
 }
