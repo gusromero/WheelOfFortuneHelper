@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using NUnit.Framework;
 using WheelOfFortuneHelper;
 
@@ -30,7 +26,7 @@ namespace WheelOfFortuneTest
 
             var words = wf.GetWords("");
 
-            Assert.AreEqual(1, words.Count);
+           Assert.AreEqual(1, words.Count);
         }
 
         [Test]
