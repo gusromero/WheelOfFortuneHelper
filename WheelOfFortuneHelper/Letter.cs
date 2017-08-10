@@ -40,6 +40,16 @@ namespace WheelOfFortuneHelper
         {
             Solution = letter;
         }
-       
+
+        public string ToRegExp()
+        {
+            if (IsSolved)
+                return Solution.ToString();
+            
+            if (_posibilities.Count == 26)
+                return "[A-Z]";
+            
+            return "[" + new string(_posibilities.ToArray()) + "]";
+        }
     }
 }

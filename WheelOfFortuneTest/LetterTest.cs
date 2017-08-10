@@ -58,6 +58,40 @@ namespace WheelOfFortuneTest
             Assert.AreEqual('A', letter.Solution);
         }
 
+        [Test]
+        public void SolvedLetterToRegExpReturnLetter()
+        {
+            var letter = new Letter();
+
+            letter.Solve('A');
+
+            var regExp = letter.ToRegExp();
+
+            Assert.AreEqual("A", regExp);
+        }
+
+        [Test]
+        public void UnsolvedLetterToRegExpReturnAllPossibilities()
+        {
+            var letter = new Letter();
+
+            var regExp = letter.ToRegExp();
+
+            //Assert.AreEqual("[A-Z]", regExp);
+            Assert.AreEqual("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]", regExp);
+        }
+
+        [Test]
+        public void PartiallySolvedLetterToRegExpReturnAllAVailablePossibilities()
+        {
+            var letter = new Letter();
+
+            letter.DiscardPossibility('A');
+
+            var regExp = letter.ToRegExp();
+
+            Assert.AreEqual("[BCDEFGHIJKLMNOPQRSTUVWXYZ]", regExp);
+        }
 
     }
 }
