@@ -21,8 +21,6 @@ namespace WheelOfFortuneHelper
         {
             _posibilities = new List<char>();
             _posibilities.AddRange("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-
-
         }
 
         public void DiscardPossibility(char letter)
@@ -36,6 +34,11 @@ namespace WheelOfFortuneHelper
             {
                 Solution = _posibilities[0];
             }
+        }
+
+        public void Solve(char letter)
+        {
+            Solution = letter;
         }
        
     }
