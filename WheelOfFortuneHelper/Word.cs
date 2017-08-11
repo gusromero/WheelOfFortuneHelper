@@ -23,7 +23,7 @@ namespace WheelOfFortuneHelper
 
         public string ToRegExp()
         {
-            return _letters.Aggregate(string.Empty, (current, letter) => current + letter.ToRegExp());
+            return "^" + _letters.Aggregate(string.Empty, (current, letter) => current + letter.ToRegExp()) +"$";
         }
     }
 }

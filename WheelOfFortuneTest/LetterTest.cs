@@ -77,8 +77,8 @@ namespace WheelOfFortuneTest
 
             var regExp = letter.ToRegExp();
 
-            //Assert.AreEqual("[A-Z]", regExp);
-            Assert.AreEqual("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]", regExp);
+            Assert.AreEqual("[A-Z]", regExp);
+            //Assert.AreEqual("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]", regExp);
         }
 
         [Test]
