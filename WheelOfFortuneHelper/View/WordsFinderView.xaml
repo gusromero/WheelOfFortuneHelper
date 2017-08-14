@@ -10,6 +10,32 @@
         <viewModel:WordsFinderViewModel/>
     </UserControl.DataContext>
     <Grid>
-            <Label Content="Introduce letters"></Label>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment = "Left">
+            <Label Content="Introduce number of letters"/>
+            <TextBox Text="{Binding NumberOfLetters}" CharacterCasing="Upper"></TextBox>
+
+        </StackPanel>
+        <StackPanel Grid.Row ="1" HorizontalAlignment = "Left">
+
+            <ItemsControl ItemsSource = "{Binding Path=Letters}">
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation = "Horizontal">
+                            <TextBox Text = "{Binding Path = Solution, Mode = TwoWay}" 
+                                     CharacterCasing="Upper" Width = "100" Margin = "3 5 3 5"/>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
+
+        </StackPanel>
     </Grid>
 </UserControl>

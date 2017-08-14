@@ -60,6 +60,7 @@
     <Compile Include="Model\Letter.cs" />
     <Compile Include="Model\Word.cs" />
     <Compile Include="ViewModel\LetterViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\WordsFinderViewModel.cs" />
     <Compile Include="View\WordsFinderView.xaml.cs">
       <DependentUpon>WordsFinderView.xaml</DependentUpon>
