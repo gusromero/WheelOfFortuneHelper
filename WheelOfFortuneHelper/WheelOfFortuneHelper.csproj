@@ -56,9 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="IRegExpressionable.cs" />
-    <Compile Include="Letter.cs" />
-    <Compile Include="Word.cs" />
+    <Compile Include="Model\IRegExpressionable.cs" />
+    <Compile Include="Model\Letter.cs" />
+    <Compile Include="Model\Word.cs" />
     <Compile Include="WordsFinder.cs" />
     <Compile Include="WordsReader.cs" />
     <Page Include="MainWindow.xaml">
