@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WheelOfFortuneHelper
 {
-    public class Word
+
+
+    public class Word : IRegExpressionable
     {
         private List<Letter> _letters;
 

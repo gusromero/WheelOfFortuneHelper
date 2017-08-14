@@ -49,12 +49,9 @@ namespace WheelOfFortuneTest
                 letter
             });
 
-
-
             var wordsSolutions = wf.GetWords(word);
 
             Assert.AreEqual(2, wordsSolutions.Count);
-            //Assert.AreEqual("WORD", wordsSolutions[0]);
         }
     }
 }
