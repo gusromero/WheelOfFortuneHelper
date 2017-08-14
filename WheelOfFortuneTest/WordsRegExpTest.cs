@@ -54,5 +54,55 @@ namespace WheelOfFortuneTest
 
             Assert.AreEqual(2, wordsSolutions.Count);
         }
+
+        [Test]
+        public void FindWordsWhenMatchTheExistingLetters()
+        {
+            var wordList = new List<string>() { "AAAA", "AAAB", "ABAA" };
+            var wf = new WordsFinder(wordList);
+
+            var letterA = new Letter();
+            letterA.Solve('A');
+            
+            var letter = new Letter();
+
+
+            var word = new Word(new List<Letter>()
+            {
+                letterA,
+                letterA,
+                letterA,
+                letter
+            });
+
+            var wordsSolutions = wf.GetWords(word);
+
+            Assert.AreEqual(2, wordsSolutions.Count);
+        }
+
+        [Test]
+        public void FindWordsWhenMatchTheUnexistingLetters()
+        {
+            var wordList = new List<string>() { "AAAA", "AAAB", "ABAA" };
+            var wf = new WordsFinder(wordList);
+
+            var letterA = new Letter();
+            letterA.Solve('A');
+
+            var letterMinusB = new Letter();
+            letterMinusB.DiscardPossibility('B');
+
+            var word = new Word(new List<Letter>()
+            {
+                letterA,
+                letterA,
+                letterA,
+                letterMinusB
+            });
+
+            var wordsSolutions = wf.GetWords(word);
+
+            Assert.AreEqual(1, wordsSolutions.Count);
+        }
     }
 }
