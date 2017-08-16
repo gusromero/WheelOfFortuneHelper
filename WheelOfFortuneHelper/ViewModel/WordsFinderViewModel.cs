@@ -21,13 +21,23 @@ namespace WheelOfFortuneHelper.ViewModel
             set
             {
                 _numberOfLetters = value;
-                Letters = new ObservableCollection<Letter>(new Letter[_numberOfLetters]);
+                Letters = InitializeLetters(_numberOfLetters);
             }
         }
 
-        private ObservableCollection<Letter> _letters;
+        private ObservableCollection<LetterViewModel> InitializeLetters(int numberOfLetters)
+        {
+            var collection = new ObservableCollection<LetterViewModel>();
+            for (var i = 0; i < numberOfLetters; i++)
+            {
+                collection.Add(new LetterViewModel());
+            }
 
-        public ObservableCollection<Letter> Letters
+            return collection;
+        }
+
+        private ObservableCollection<LetterViewModel> _letters;
+        public ObservableCollection<LetterViewModel> Letters
         {
             get { return _letters; }
             set
@@ -36,6 +46,32 @@ namespace WheelOfFortuneHelper.ViewModel
                 {
                     _letters = value;
                     OnPropertyChanged("Letters");
+                }
+            }
+        }
+
+        private string _discardedLetters;
+
+        public string DiscardedLetters
+        {
+            get { return _discardedLetters; }
+            set
+            {
+                if (value != _discardedLetters)
+                {
+                    _discardedLetters = value;
+                    DiscardLetters();
+                }
+            }
+        }
+
+        private  void DiscardLetters()
+        {
+            foreach (var discardedLetter in _discardedLetters.ToCharArray())
+            {
+                foreach (var letter in Letters)
+                {
+                    letter.DiscardPossibility(discardedLetter);   
                 }
             }
         }

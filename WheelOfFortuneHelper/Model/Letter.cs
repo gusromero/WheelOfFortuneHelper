@@ -10,7 +10,7 @@ namespace WheelOfFortuneHelper.Model
     {
         private List<char> _posibilities;
 
-        public char? Solution { get; private set; }
+        public char? Solution { get; set; }
 
         public bool IsSolved
         {
